@@ -9,7 +9,7 @@
 
     public override void ExpresarSentimientos()
     {
-        Console.WriteLine($"{Nombre} dedica un poema apasionado.");
+        Console.WriteLine($"{Nombre} dedica un poema muy muy muy apasionado.");
     }
 }
 
