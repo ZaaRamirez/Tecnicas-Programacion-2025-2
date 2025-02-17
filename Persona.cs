@@ -15,7 +15,7 @@
 
     public virtual void MostrarInteres()
     {
-        Console.WriteLine($"{Nombre} muestra su interes muy romanticamente");
+        Console.WriteLine($"{Nombre} muestra su interes a secas");
     }
 
     public virtual void ExpresarSentimientoss()
