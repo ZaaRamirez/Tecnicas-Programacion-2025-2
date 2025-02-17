@@ -20,7 +20,7 @@
 
     public virtual void ExpresarSentimientoss()
     {
-        Console.WriteLine($"{Nombre} expresa sus sentimientos");
+        Console.WriteLine($"{Nombre} expresa sus sentimientos apasionadamente");
     }
 
     //Sobrecarga de +
