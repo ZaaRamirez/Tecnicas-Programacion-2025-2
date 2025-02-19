@@ -1,41 +1,44 @@
-﻿
-
-int numero;
-
-Console.WriteLine("Este programa solamente divide 10 entre un numero positivo entero real");
+﻿Banco banco = new Banco();
 
 try
 {
-    numero = int.Parse(Console.ReadLine() ?? "");
+    
+    CuentaBancaria cuentaOrigen = banco.BuscarCuenta("12345");
 
-    if (numero < 0)
-    {
-        throw new ArgumentException("El numero no puede ser negativo");
-    }
+    CuentaBancaria cuentaDestino = banco.BuscarCuenta("67890");
 
-    double division = 10 / numero;
-    Console.WriteLine($"La division de 10 / {numero} es: {division}");
-}
-catch (DivideByZeroException)
-{
-    Console.WriteLine($"No se puede dividir entre cero");
-}
-catch (ArgumentException)
-{
-    Console.WriteLine("El numero no puede ser negativo");
-}
-catch(FormatException)
-{
-    Console.WriteLine("El numero ingresado no es valido");
-}
-catch(Exception ex)
-{
-    Console.WriteLine($"Error inesperado: {ex.Message}");
-}
-finally
-{
-    Console.WriteLine("El programa terminó");
-}
+    Console.WriteLine("Transferencia:");
+    Console.WriteLine($"Saldo inicial: {cuentaOrigen.Saldo}");
 
+    cuentaOrigen.Transferir(cuentaDestino, 10);
+
+    Console.WriteLine($"Saldo restante: {cuentaOrigen.Saldo}");
+
+    Console.WriteLine("Deposito:");
+    Console.WriteLine($"Saldo inicial: {cuentaOrigen.Saldo}");
+
+    cuentaOrigen.Depositar(10000);
+
+    Console.WriteLine($"Saldo restante: {cuentaOrigen.Saldo}");
+
+    Console.WriteLine("Retiro:");
+    Console.WriteLine($"Saldo inicial: {cuentaOrigen.Saldo}");
+
+    cuentaOrigen.Retirar(556);
+
+    Console.WriteLine($"Saldo restante: {cuentaOrigen.Saldo}");
+}
+catch (SaldoInsuficienteException e)
+{
+    Console.WriteLine(e.Message);
+}
+catch (CuentaNoEncontradaException e)
+{
+    Console.WriteLine(e.Message);
+}
+catch (DepositoInvalidoException e)
+{
+    Console.WriteLine(e.Message);
+}
 
 

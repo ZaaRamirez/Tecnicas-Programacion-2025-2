@@ -8,16 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Arreglos1.cs" />
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="CalculadoraCientifica.cs" />
+    <Compile Remove="Excepciones.cs" />
     <Compile Remove="Factorial.cs" />
     <Compile Remove="Persona.cs" />
     <Compile Remove="TiposPersona.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Arreglos1.cs" />
     <None Include="Calculadora.cs" />
     <None Include="CalculadoraCientifica.cs" />
+    <None Include="Excepciones.cs" />
     <None Include="Factorial.cs" />
     <None Include="Persona.cs" />
     <None Include="TiposPersona.cs" />
